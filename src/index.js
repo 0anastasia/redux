@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { combineReducers, compose, legacy_createStore } from "redux";
+import reduserForm from "./reducers/reducerForm";
+import reducerServiceList from "./reducers/reducerServiceList";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+const ReactReduxDevTools =
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const configureStore = () => {
+  return legacy_createStore(
+    combineReducers({
+      item: reduserForm,
+      serviceList:reducerServiceList,
+    }),
+    undefined,
+    compose(ReactReduxDevTools)
+  );
+};
+
+export default configureStore;
