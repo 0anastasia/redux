@@ -34,7 +34,7 @@ ul.service-list {
     margin-right: 5px;
     border: none;
     background-color: green;
-    /* background-image: url(../../../assets/pencil.png); */
+    /* background-image: url(../../../pencil.png); */
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center;
@@ -48,7 +48,7 @@ ul.service-list {
     margin-left: 5px;
     border: none;
     background-color: red;
-    /* background-image: url(../../../assets/delete.png); */
+    /* background-image: url(../../../delete.png); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
